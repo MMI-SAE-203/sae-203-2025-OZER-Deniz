@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
-import "../styles/global.css"
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
 const { titre } = Astro.props;
 ---
 
@@ -11,10 +12,11 @@ const { titre } = Astro.props;
 		<title>{titre}</title>
 		<link rel="stylesheet" href="/styles.css" />
 	</head>
-	<body class="bg-gray-100 text-gray-900">
+	<body class="text-gray-900">
 		<Header />
-		<main class="p-6">
+		<main class="">
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>

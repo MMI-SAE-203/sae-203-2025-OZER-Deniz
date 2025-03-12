@@ -1,7 +1,198 @@
 ---
 import Base from "../layouts/Layout.astro";
+import HeroImage from "../assets/hero-accueil.avif";
+import { Image } from "astro:assets";
+import IntroImage from "../assets/intro-accueil.avif";
 ---
 
-<Base titre="Accueil">
-	<h1 class="text-3xl my-10 text-purple-400 text-center">Accueil</h1>
+<Base titre="Festival Ça va Trail'er">
+	<!-- Section Hero -->
+	<section
+		class="relative w-full h-screen flex items-center justify-center text-center text-white bg-cover bg-center"
+	>
+		<Image
+			src={HeroImage}
+			alt="Festival Ça va Trail'er"
+			width={1920}
+			height={1080}
+			class="absolute inset-0 w-full h-screen object-cover"
+		/>
+		<div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+		<div class="relative z-10 px-8 max-w-4xl">
+			<h1 class="text-6xl md:text-7xl font-bold uppercase tracking-wide">
+				Ça va Trail'er
+			</h1>
+			<p class="mt-4 text-2xl md:text-3xl font-semibold text-orange-500">
+				Festival Audiovisuel & Sportif
+			</p>
+			<p class="mt-4 text-xl md:text-2xl">
+				Du 15 au 21 avril 2025 - Parc de la Douce, Belfort
+			</p>
+
+			<a
+				href="#reservation"
+				class="mt-6 inline-block bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105 hover:bg-orange-700"
+			>
+				Réserver votre place
+			</a>
+		</div>
+	</section>
+
+	<!-- Section Présentation -->
+	<section class="bg-gray-100 py-24">
+		<div class="max-w-6xl mx-auto px-6 text-center">
+			<h2 class="text-5xl font-bold text-orange-600">
+				Un festival unique
+			</h2>
+			<p class="mt-6 text-xl text-gray-800">
+				Un événement qui fusionne sport et audiovisuel, offrant des
+				projections de films inspirants, des rencontres avec des
+				athlètes et des réalisateurs, ainsi que des expériences
+				immersives.
+			</p>
+		</div>
+	</section>
+
+	<!-- Section Programme -->
+	<section class="py-24 bg-white">
+		<div class="max-w-6xl mx-auto px-6">
+			<h2 class="text-5xl font-bold text-orange-600 text-center">
+				Programme
+			</h2>
+			<p class="mt-4 text-lg text-gray-700 text-center">
+				Découvrez les temps forts du festival
+			</p>
+
+			<div class="grid md:grid-cols-3 gap-12 mt-12">
+				<div class="p-6 shadow-lg rounded-lg bg-gray-50">
+					<h3 class="text-2xl font-semibold text-orange-600">
+						Projections de films
+					</h3>
+					<p class="mt-4 text-gray-700">
+						Une sélection de documentaires et fictions autour du
+						sport et de l'aventure.
+					</p>
+				</div>
+
+				<div class="p-6 shadow-lg rounded-lg bg-gray-50">
+					<h3 class="text-2xl font-semibold text-orange-600">
+						Rencontres et conférences
+					</h3>
+					<p class="mt-4 text-gray-700">
+						Échanges avec des réalisateurs, athlètes et
+						professionnels du sport.
+					</p>
+				</div>
+
+				<div class="p-6 shadow-lg rounded-lg bg-gray-50">
+					<h3 class="text-2xl font-semibold text-orange-600">
+						Expériences interactives
+					</h3>
+					<p class="mt-4 text-gray-700">
+						Ateliers, tests de matériel sportif et animations
+						immersives.
+					</p>
+				</div>
+			</div>
+
+			<div class="mt-12 text-center">
+				<a
+					href="#agenda"
+					class="bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105 hover:bg-orange-700"
+				>
+					Découvrir l'agenda complet
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section Invités -->
+	<section class="py-24 bg-gray-100">
+		<div class="max-w-6xl mx-auto px-6 text-center">
+			<h2 class="text-5xl font-bold text-orange-600">Nos invités</h2>
+			<p class="mt-4 text-lg text-gray-700">
+				Athlètes, réalisateurs et personnalités du sport et de l’image
+			</p>
+
+			<div class="grid md:grid-cols-3 gap-12 mt-12">
+				<div class="bg-white shadow-lg rounded-lg p-6">
+					<img
+						src="/assets/invite-1.jpg"
+						alt="Invité 1"
+						class="w-full rounded-lg mb-4"
+					/>
+					<h3 class="text-2xl font-semibold">Nom Invité 1</h3>
+					<p class="text-gray-600">Réalisateur et aventurier</p>
+				</div>
+
+				<div class="bg-white shadow-lg rounded-lg p-6">
+					<img
+						src="/assets/invite-2.jpg"
+						alt="Invité 2"
+						class="w-full rounded-lg mb-4"
+					/>
+					<h3 class="text-2xl font-semibold">Nom Invité 2</h3>
+					<p class="text-gray-600">Athlète de haut niveau</p>
+				</div>
+
+				<div class="bg-white shadow-lg rounded-lg p-6">
+					<img
+						src="/assets/invite-3.jpg"
+						alt="Invité 3"
+						class="w-full rounded-lg mb-4"
+					/>
+					<h3 class="text-2xl font-semibold">Nom Invité 3</h3>
+					<p class="text-gray-600">Journaliste sportif</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section Partenaires -->
+	<section class="py-24 bg-white">
+		<div class="max-w-6xl mx-auto px-6 text-center">
+			<h2 class="text-5xl font-bold text-orange-600">Nos partenaires</h2>
+			<p class="mt-4 text-lg text-gray-700">
+				Ils soutiennent l'événement
+			</p>
+
+			<div class="flex flex-wrap justify-center gap-12 mt-12">
+				<img
+					src="/assets/partenaire-1.png"
+					alt="Partenaire 1"
+					class="h-16"
+				/>
+				<img
+					src="/assets/partenaire-2.png"
+					alt="Partenaire 2"
+					class="h-16"
+				/>
+				<img
+					src="/assets/partenaire-3.png"
+					alt="Partenaire 3"
+					class="h-16"
+				/>
+				<img
+					src="/assets/partenaire-4.png"
+					alt="Partenaire 4"
+					class="h-16"
+				/>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section Réservation -->
+	<section class="py-24 bg-orange-600 text-white text-center">
+		<h2 class="text-5xl font-bold">Réservez votre place</h2>
+		<p class="mt-4 text-lg">
+			Ne manquez pas l'événement, l'entrée est gratuite !
+		</p>
+		<a
+			href="#reservation"
+			class="mt-6 inline-block bg-white text-orange-600 font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105 hover:bg-gray-200"
+		>
+			Je réserve ma place
+		</a>
+	</section>
 </Base>
