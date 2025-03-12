@@ -1,0 +1,117 @@
+---
+import Logo from "../assets/logo.svg";
+const currentPath = Astro.url.pathname;
+console.log(currentPath);
+---
+
+<script>
+    import "/src/js/deroulant.js";
+</script>
+<script>
+    import "/src/js/menu.js";
+</script>
+
+<header
+    class="flex items-center justify-between px-4 gap-8 border-b-2 border-b-indigo-100 h-20"
+>
+    <a href="/">
+        <Logo />
+    </a>
+    <button
+        id="menu-btn"
+        class="group relative z-10 flex h-3 w-6 flex-col justify-between *:block *:ease *:h-0.5 *:w-full *:transform *:rounded-full *:bg-black *:transition *:duration-300 lg:hidden"
+        aria-label="Menu"
+        aria-controls="menu"
+        aria-expanded="false"
+    >
+        <span
+            class="group-aria-expanded:translate-y-[5px] group-aria-expanded:rotate-45"
+        ></span>
+        <span
+            class="group-aria-expanded:-translate-y-[5px] group-aria-expanded:-rotate-45"
+        ></span>
+    </button>
+    <nav
+        id="menu"
+        class="flex-1 px-6 py-12 flex justify-between mt-20 flex-col fixed z-10 inset-0 bg-indigo-50 visible opacity-100 max-lg:aria-hidden:invisible max-lg:aria-hidden:opacity-0 lg:bg-transparent lg:static lg:mt-0 lg:py-6 lg:flex-row"
+        aria-hidden="true"
+    >
+        <ul class="flex flex-col gap-4 lg:flex-row">
+            <!-- Bouton Programme -->
+            <li class="relative">
+                <button
+                    id="dropdown-btn"
+                    class="flex items-center gap-2 p-4 rounded-lg text-gray-500"
+                >
+                    Programme
+                    <!-- Flèche -->
+                    <svg
+                        id="dropdown-arrow"
+                        class="w-4 h-4 transition-transform duration-300"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <!-- Menu déroulant -->
+                <div
+                    id="dropdown-menu"
+                    class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg hidden"
+                >
+                    <a
+                        href="/films"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+                        >Films</a
+                    >
+                    <a
+                        href="/activites"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+                        >Activités</a
+                    >
+                    <a
+                        href="/invites"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+                        >Invités</a
+                    >
+                </div>
+            </li>
+            <li>
+                <a class="block p-4 rounded-lg text-gray-500" href="/about"
+                    >À propos</a
+                >
+            </li>
+            <li>
+                <a class="block p-4 rounded-lg text-gray-500" href="/contact"
+                    >Contacts</a
+                >
+            </li>
+            <li>
+                <a class="block p-4 rounded-lg text-gray-500" href="/newsletter"
+                    >Newsletter</a
+                >
+            </li>
+            <li>
+                <a class="block p-4 rounded-lg text-gray-500" href="/resources"
+                    >Resources</a
+                >
+            </li>
+        </ul>
+        <div class="flex items-center justify-center gap-4 px-4">
+            <a
+                href="/login"
+                class="inline-flex items-center gap-2 text-orange-500 border-2 font-bold rounded-lg transition duration-300 ease-in-out px-6 py-3 text-base border-orange-400"
+                >Connexion</a
+            >
+            <a
+                href="/signup"
+                class="inline-flex items-center gap-2 text-white border-2 font-bold rounded-lg transition duration-300 ease-in-out px-6 py-3 text-base border-orange-600 bg-orange-500"
+                >Inscription</a
+            >
+        </div>
+    </nav>
+</header>
