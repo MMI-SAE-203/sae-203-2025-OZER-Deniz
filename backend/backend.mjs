@@ -14,6 +14,18 @@ export async function oneFilm(id) {
     });
 }
 
+export async function allActivities() {
+    return await pb.collection('Activite').getFullList({
+        fields: 'id,titre_activite,type_activite,image_activite,date_activite,lieu_activite'
+    });
+}
+
+export async function oneActivity(id) {
+    return await pb.collection('Activite').getOne(id, {
+        fields: 'titre_activite,type_activite,image_activite,date_activite,lieu_activite,description_activite'
+    });
+}
+
 export async function allFilmsSorted() {
     return await pb.collection('Film').getFullList({
         sort: 'dateProjection'

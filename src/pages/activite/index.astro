@@ -1,14 +1,14 @@
 ---
 import Base from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
-import { allFilms } from "../../../backend/backend.mjs";
-import HeroImage from "../../assets/hero-4.avif";
+import { allActivities } from "../../../backend/backend.mjs";
+import HeroImage from "../../assets/hero-3.avif";
 import { Image } from "astro:assets";
 
-const films = await allFilms();
+const activities = await allActivities();
 ---
 
-<Base titre="PROGRAMME - Films">
+<Base titre="PROGRAMME - Activités">
     <div class="mt-100">
         <section
             class="relative w-full h-96 flex items-center justify-center text-center text-white bg-cover bg-center"
@@ -26,27 +26,27 @@ const films = await allFilms();
                 <h1
                     class="text-6xl md:text-8xl font-extrabold uppercase tracking-wide"
                 >
-                    Films
+                    Activités
                 </h1>
                 <p
-                    class="mt-4 text-2xl md:text-3xl font-semibold text-orange-500 bg-white px-4 py-2 rounded-md inline-block"
+                    class="mt-4 text-2xl md:text-3xl font-semibold text-orange-500 bg-white bg-opacity-75 px-4 py-2 rounded-md inline-block"
                 >
-                    Découvrez notre sélection de films
+                    Découvrez nos activités
                 </p>
             </div>
         </section>
 
         <section class="max-w-6xl mx-auto my-12 px-6 text-center">
-            <h1 class="text-5xl font-bold text-orange-600 mb-8">Films</h1>
+            <h1 class="text-5xl font-bold text-orange-600 mb-8">Activités</h1>
             <div class="grid md:grid-cols-3 gap-12">
                 {
-                    films.map((film) => (
+                    activities.map((activity) => (
                         <Card
-                            titre={film.titre_film}
-                            diffusion={film.diffusion_film}
-                            affiche={film.affiche_film}
-                            collectionId="Film"
-                            recordId={film.id}
+                            titre={activity.titre_activite}
+                            diffusion={activity.date_activite}
+                            affiche={activity.image_activite}
+                            collectionId="Activite"
+                            recordId={activity.id}
                         />
                     ))
                 }
