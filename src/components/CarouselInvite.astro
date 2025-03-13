@@ -1,0 +1,71 @@
+---
+// filepath: c:\Users\deniz\OneDrive\Desktop\sae-203-2025-OZER-Deniz\src\components\CarouselInvite.astro
+import { allInvites } from "../../backend/backend.mjs";
+
+const invites = await allInvites();
+const baseUrl = "http://127.0.0.1:8090"; // Remplacez par l'URL de votre instance PocketBase
+---
+
+<script>
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll(".carousel-slide");
+        if (index >= slides.length) currentIndex = 0;
+        if (index < 0) currentIndex = slides.length - 1;
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("hidden", i !== currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex++;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex--;
+        showSlide(currentIndex);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        showSlide(currentIndex);
+        setInterval(nextSlide, 5000);
+    });
+</script>
+
+<div class="relative w-full max-w-6xl mx-auto">
+    <div class="overflow-hidden relative h-96">
+        {
+            invites.map((invite, index) => (
+                <div
+                    class={`carousel-slide ${index !== 0 ? "hidden" : ""} absolute inset-0 transition-opacity duration-500 flex items-center justify-center`}
+                >
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden w-96">
+                        <img
+                            src={`${baseUrl}/api/files/Invite/${invite.id}/${invite.photo_invite}`}
+                            alt={`${invite.prenom_invite} ${invite.nom_invite}`}
+                            class="w-full h-64 object-cover"
+                        />
+                        <div class="p-4">
+                            <h3 class="text-2xl font-bold text-orange-600">
+                                {invite.prenom_invite} {invite.nom_invite}
+                            </h3>
+                            <p class="mt-2 text-gray-700">
+                                {invite.role_invite}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+    <button
+        class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-orange-500 text-white px-4 py-2 rounded-full"
+        onclick="prevSlide()">&#10094;</button
+    >
+    <button
+        class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-orange-500 text-white px-4 py-2 rounded-full"
+        onclick="nextSlide()">&#10095;</button
+    >
+</div>

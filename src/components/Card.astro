@@ -1,6 +1,6 @@
 ---
 const { titre, diffusion, affiche, collectionId, recordId } = Astro.props;
-const baseUrl = "http://127.0.0.1:8090"; // Remplacez par l'URL de votre instance PocketBase
+const baseUrl = "http://127.0.0.1:8090";
 const afficheUrl = `${baseUrl}/api/files/${collectionId}/${recordId}/${affiche}`;
 console.log("Affiche URL:", afficheUrl);
 ---

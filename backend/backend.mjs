@@ -26,6 +26,18 @@ export async function oneActivity(id) {
     });
 }
 
+export async function allInvites() {
+    return await pb.collection('Invite').getFullList({
+        fields: 'id,nom_invite,prenom_invite,role_invite,photo_invite'
+    });
+}
+
+export async function oneInvite(id) {
+    return await pb.collection('Invite').getOne(id, {
+        fields: 'nom_invite,prenom_invite,role_invite,biographie_invite,photo_invite'
+    });
+}
+
 export async function allFilmsSorted() {
     return await pb.collection('Film').getFullList({
         sort: 'dateProjection'
@@ -58,7 +70,7 @@ export async function oneParticipant(id) {
 
 export async function allActivitiesByAnimatorId(animatorId) {
     return await pb.collection('Activite').getFullList({
-        filter: `animateur = '${animatorId}'`
+        filter: `Invite = '${animatorId}'`
     });
 }
 
