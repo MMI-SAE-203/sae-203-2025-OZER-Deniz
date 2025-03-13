@@ -1,0 +1,203 @@
+---
+import Base from "../layouts/Layout.astro";
+import HeroImage from "../assets/hero-5.avif";
+import { Image } from "astro:assets";
+---
+
+<Base titre="Ressources">
+    <section
+        class="relative w-full h-screen flex items-center justify-center text-center text-white bg-cover bg-center"
+    >
+        <Image
+            src={HeroImage}
+            alt="Festival Ça va Trail'er"
+            width={1920}
+            height={1080}
+            class="absolute inset-0 w-full h-screen object-cover"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <div class="relative z-10 px-8 max-w-4xl">
+            <h1 class="text-6xl md:text-7xl font-bold uppercase tracking-wide">
+                Ressources
+            </h1>
+            <p class="mt-4 text-2xl md:text-3xl font-semibold text-orange-500">
+                Toutes les informations pratiques pour le festival
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-gray-100 py-24">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-orange-600">Tarifs</h2>
+            <p class="mt-6 text-xl text-gray-800">
+                Prix des billets, abonnements, réductions.
+            </p>
+            <div class="mt-8 text-left">
+                <ul class="list-disc list-inside text-lg text-gray-700">
+                    <li>Billet journalier : 10€</li>
+                    <li>Abonnement 3 jours : 25€</li>
+                    <li>Abonnement semaine : 50€</li>
+                    <li>Réductions pour étudiants et seniors : 20%</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-orange-600">Lieux</h2>
+            <p class="mt-6 text-xl text-gray-800">
+                Cartes et adresses des salles de projection et événements.
+            </p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-orange-600">
+                        <a
+                            href="https://www.google.com/maps/place/Parc+de+la+Douce,+Belfort"
+                            target="_blank"
+                            class="hover:underline">Parc de la Douce</a
+                        >
+                    </h3>
+                    <p class="mt-2 text-gray-700">Belfort</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-orange-600">
+                        <a
+                            href="https://www.google.com/maps/place/Salle+des+Fêtes,+Belfort"
+                            target="_blank"
+                            class="hover:underline">Salle des Fêtes</a
+                        >
+                    </h3>
+                    <p class="mt-2 text-gray-700">Belfort</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-orange-600">
+                        <a
+                            href="https://www.google.com/maps/place/Théâtre+Granit,+Belfort"
+                            target="_blank"
+                            class="hover:underline">Théâtre Granit</a
+                        >
+                    </h3>
+                    <p class="mt-2 text-gray-700">Belfort</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-100 py-24">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-orange-600">Hébergement</h2>
+            <p class="mt-6 text-xl text-gray-800">Hôtels, campings, etc.</p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-orange-600">
+                        <a
+                            href="https://www.google.com/maps/place/Hôtel+Belfort+Centre"
+                            target="_blank"
+                            class="hover:underline">Hôtel Belfort Centre</a
+                        >
+                    </h3>
+                    <p class="mt-2 text-gray-700">Adresse de l'hôtel</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-orange-600">
+                        <a
+                            href="https://www.google.com/maps/place/Camping+de+la+Douce"
+                            target="_blank"
+                            class="hover:underline">Camping de la Douce</a
+                        >
+                    </h3>
+                    <p class="mt-2 text-gray-700">Adresse du camping</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-orange-600">
+                        <a
+                            href="https://www.google.com/maps/place/Chambres+d'hôtes+Chez+Marie"
+                            target="_blank"
+                            class="hover:underline"
+                            >Chambres d'hôtes Chez Marie</a
+                        >
+                    </h3>
+                    <p class="mt-2 text-gray-700">
+                        Adresse des chambres d'hôtes
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-orange-600">Transport</h2>
+            <p class="mt-6 text-xl text-gray-800">
+                Accès (train, voiture, covoiturage, parkings).
+            </p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-orange-600">
+                        <a
+                            href="https://www.google.com/maps/place/Gare+de+Belfort"
+                            target="_blank"
+                            class="hover:underline">Gare de Belfort</a
+                        >
+                    </h3>
+                    <p class="mt-2 text-gray-700">10 min à pied du parc</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-orange-600">
+                        <a
+                            href="https://www.google.com/maps/place/Parc+de+la+Douce"
+                            target="_blank"
+                            class="hover:underline">Parking gratuit</a
+                        >
+                    </h3>
+                    <p class="mt-2 text-gray-700">Parc de la Douce</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-orange-600">
+                        <a
+                            href="https://www.blablacar.fr/"
+                            target="_blank"
+                            class="hover:underline">Covoiturage</a
+                        >
+                    </h3>
+                    <p class="mt-2 text-gray-700">Organisé via BlaBlaCar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-100 py-24">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-orange-600">FAQ</h2>
+            <p class="mt-6 text-xl text-gray-800">Questions fréquentes.</p>
+            <div class="mt-8 text-left">
+                <ul class="list-disc list-inside text-lg text-gray-700">
+                    <li>
+                        <strong>Quels sont les horaires d'ouverture ?</strong>
+                        <p class="mt-2 text-gray-700">
+                            Le festival est ouvert de 10h à 22h tous les jours.
+                        </p>
+                    </li>
+                    <li>
+                        <strong
+                            >Y a-t-il des activités pour les enfants ?</strong
+                        >
+                        <p class="mt-2 text-gray-700">
+                            Oui, nous avons des ateliers et des projections
+                            spécialement pour les enfants.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Comment puis-je réserver mes billets ?</strong>
+                        <p class="mt-2 text-gray-700">
+                            Vous pouvez réserver vos billets en ligne sur notre
+                            site web ou sur place aux guichets.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</Base>
