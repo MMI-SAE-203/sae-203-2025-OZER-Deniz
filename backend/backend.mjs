@@ -4,13 +4,13 @@ export default pb;
 
 export async function allFilms() {
     return await pb.collection('Film').getFullList({
-        fields: 'id,titre_film,affiche_film,diffusion_film'
+        fields: 'id,titre_film,affiche_film,diffusion_film,bande_annonce_film'
     });
 }
 
 export async function oneFilm(id) {
     return await pb.collection('Film').getOne(id, {
-        fields: 'titre_film,duree_film,langue_film,production_film,annee_de_sortie_film,genre_film,affiche_film'
+        fields: 'titre_film,duree_film,langue_film,production_film,annee_de_sortie_film,genre_film,affiche_film,bande_annonce_film'
     });
 }
 
