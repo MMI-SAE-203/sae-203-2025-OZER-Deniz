@@ -1,0 +1,93 @@
+---
+import Base from "../../layouts/Layout.astro";
+import { oneFilm } from "../../../backend/backend.mjs";
+
+const { id } = Astro.params;
+const film = await oneFilm(id);
+const baseUrl = "http://127.0.0.1:8090"; // Remplacez par l'URL de votre instance PocketBase
+const afficheUrl = `${baseUrl}/api/files/Film/${id}/${film.affiche_film}`;
+---
+
+<Base titre={film.titre_film}>
+    <div class="mt-100">
+        <!-- Bannière -->
+        <section
+            class="relative w-full h-96 flex items-center justify-center text-center text-white bg-cover bg-center"
+        >
+            <img
+                src={afficheUrl}
+                alt={film.titre_film}
+                class="absolute inset-0 w-full h-96 object-cover"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            <div class="relative z-10 px-8 max-w-4xl">
+                <h1
+                    class="text-6xl md:text-8xl font-extrabold uppercase tracking-wide"
+                >
+                    {film.titre_film}
+                </h1>
+                <p
+                    class="mt-4 text-2xl md:text-3xl font-semibold text-orange-500 bg-white bg-opacity-75 px-4 py-2 rounded-md inline-block"
+                >
+                    {film.genre_film}
+                </p>
+            </div>
+        </section>
+
+        <!-- Détails du film -->
+        <section class="max-w-6xl mx-auto my-12 px-6 text-left">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <img
+                        src={afficheUrl}
+                        alt={film.titre_film}
+                        class="w-full h-auto rounded-lg shadow-lg"
+                    />
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-orange-600 mb-4">
+                        Détails du film
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <strong>Durée :</strong>
+                        {film.duree_film}
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <strong>Langue :</strong>
+                        {film.langue_film}
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <strong>Production :</strong>
+                        {film.production_film}
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <strong>Année de sortie :</strong>
+                        {film.annee_de_sortie_film}
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <strong>Genre :</strong>
+                        {film.genre_film}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Synopsis du film -->
+        <section class="max-w-6xl mx-auto my-12 px-6 text-left">
+            <h2 class="text-4xl font-bold text-orange-600 mb-4">Synopsis</h2>
+            <p class="text-lg text-gray-700 mb-8">
+                {film.synopsis_film}
+            </p>
+        </section>
+
+        <!-- Bouton de retour -->
+        <section class="max-w-6xl mx-auto my-12 px-6 text-center">
+            <a
+                href="/film"
+                class="inline-block bg-orange-500 text-white font-bold py-4 px-8 rounded-lg text-lg transition transform hover:scale-105 hover:bg-orange-600"
+            >
+                Retour à la liste des films
+            </a>
+        </section>
+    </div>
+</Base>

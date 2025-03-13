@@ -3,10 +3,13 @@ import Base from "../layouts/Layout.astro";
 import HeroImage from "../assets/hero-accueil.avif";
 import { Image } from "astro:assets";
 import IntroImage from "../assets/intro-accueil.avif";
+import Allociné from "../assets/allociné.avif";
+import Ca from "../assets/credit-agricole.avif";
+import Sp from "../assets/sport-france.webp";
+import Brut from "../assets/brut.webp";
 ---
 
 <Base titre="Festival Ça va Trail'er">
-	<!-- Section Hero -->
 	<section
 		class="relative w-full h-screen flex items-center justify-center text-center text-white bg-cover bg-center"
 	>
@@ -39,7 +42,6 @@ import IntroImage from "../assets/intro-accueil.avif";
 		</div>
 	</section>
 
-	<!-- Section Présentation -->
 	<section class="bg-gray-100 py-24">
 		<div class="max-w-6xl mx-auto px-6 text-center">
 			<h2 class="text-5xl font-bold text-orange-600">
@@ -54,7 +56,6 @@ import IntroImage from "../assets/intro-accueil.avif";
 		</div>
 	</section>
 
-	<!-- Section Programme -->
 	<section class="py-24 bg-white">
 		<div class="max-w-6xl mx-auto px-6">
 			<h2 class="text-5xl font-bold text-orange-600 text-center">
@@ -107,7 +108,6 @@ import IntroImage from "../assets/intro-accueil.avif";
 		</div>
 	</section>
 
-	<!-- Section Invités -->
 	<section class="py-24 bg-gray-100">
 		<div class="max-w-6xl mx-auto px-6 text-center">
 			<h2 class="text-5xl font-bold text-orange-600">Nos invités</h2>
@@ -149,7 +149,6 @@ import IntroImage from "../assets/intro-accueil.avif";
 		</div>
 	</section>
 
-	<!-- Section Partenaires -->
 	<section class="py-24 bg-white">
 		<div class="max-w-6xl mx-auto px-6 text-center">
 			<h2 class="text-5xl font-bold text-orange-600">Nos partenaires</h2>
@@ -157,32 +156,33 @@ import IntroImage from "../assets/intro-accueil.avif";
 				Ils soutiennent l'événement
 			</p>
 
-			<div class="flex flex-wrap justify-center gap-12 mt-12">
-				<img
-					src="/assets/partenaire-1.png"
-					alt="Partenaire 1"
-					class="h-16"
+			<div
+				class="flex flex-wrap justify-center items-center space-x-4 space-y-4"
+			>
+				<Image
+					src={Allociné}
+					alt="Festival Ça va Trail'er"
+					class="w-32 h-32 object-contain"
 				/>
-				<img
-					src="/assets/partenaire-2.png"
-					alt="Partenaire 2"
-					class="h-16"
+				<Image
+					src={Ca}
+					alt="Festival Ça va Trail'er"
+					class="w-32 h-32 object-contain"
 				/>
-				<img
-					src="/assets/partenaire-3.png"
-					alt="Partenaire 3"
-					class="h-16"
+				<Image
+					src={Sp}
+					alt="Festival Ça va Trail'er"
+					class="w-32 h-32 object-contain"
 				/>
-				<img
-					src="/assets/partenaire-4.png"
-					alt="Partenaire 4"
-					class="h-16"
+				<Image
+					src={Brut}
+					alt="Festival Ça va Trail'er"
+					class="w-32 h-32 object-contain"
 				/>
 			</div>
 		</div>
 	</section>
 
-	<!-- Section Réservation -->
 	<section class="py-24 bg-orange-600 text-white text-center">
 		<h2 class="text-5xl font-bold">Réservez votre place</h2>
 		<p class="mt-4 text-lg">

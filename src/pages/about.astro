@@ -6,75 +6,143 @@ import { Image } from "astro:assets";
 
 <Base titre="À PROPOS - Ça va Trail'er">
     <section
-        class="relative w-full h-[70vh] flex items-center justify-center text-center text-white bg-cover bg-center"
+        class="relative w-full h-[90vh] flex items-center justify-center text-center text-white bg-cover bg-center overflow-hidden"
     >
-        <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-md">
+        <Image
+            src={Banner}
+            alt="Paysage naturel avec randonneurs"
+            width={1920}
+            height={1080}
+            class="absolute inset-0 w-full h-full object-cover object-center md:object-top"
+        />
+
+        <div class="absolute inset-0 bg-black bg-opacity-20 backdrop-blur-lg">
         </div>
-        <div class="relative z-10 px-6 md:px-12">
+
+        <div class="relative z-10 max-w-4xl px-8 animate-fade-in">
             <h1
-                class="text-6xl md:text-7xl font-extrabold uppercase tracking-wide drop-shadow-lg"
+                class="text-6xl md:text-7xl font-extrabold uppercase tracking-wide drop-shadow-lg leading-tight"
             >
-                À Propos du Festival
+                À PROPOS DU FESTIVAL
             </h1>
-            <p class="mt-4 text-2xl md:text-3xl font-medium">
-                Une aventure unique entre sport, cinéma et écologie
+            <p
+                class="mt-6 text-2xl md:text-3xl font-semibold bg-white text-orange-600 px-6 py-4 rounded-md shadow-xl inline-block"
+            >
+                Un festival entre sport et cinéma, engagé pour l’environnement.
             </p>
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto px-6 py-24">
-        <div
-            class="bg-white p-12 rounded-3xl shadow-2xl border-l-8 border-orange-600"
+    <section
+        class="max-w-6xl mx-auto px-8 py-24 text-center flex flex-col items-center space-y-10"
+    >
+        <h2
+            class="text-5xl font-extrabold text-orange-600 tracking-tight drop-shadow-md"
         >
-            <h2 class="text-5xl font-extrabold text-orange-600 tracking-tight">
-                Une expérience familiale et engagée
-            </h2>
-            <p class="mt-6 text-2xl text-gray-800 leading-relaxed">
-                Créé en <strong class="text-orange-600">2024</strong>,
-                <span class="font-extrabold text-orange-600"
-                    >Ça va Trail’er</span
-                > est né d’une volonté de réunir les familles autour d’une passion
-                commune : le <strong>sport</strong> et la <strong>nature</strong
-                >.
-            </p>
-            <p class="mt-4 text-xl text-gray-700 leading-relaxed">
-                Ce festival unique propose des <strong
-                    >randonnées accessibles</strong
-                > et des <strong>séances de court-métrages</strong> pour petits et
-                grands. Une occasion parfaite pour partager des moments privilégiés,
-                sensibiliser à l’écologie et profiter d’un cadre exceptionnel.
-            </p>
-        </div>
-    </section>
-
-    <section class="max-w-6xl mx-auto px-6 py-24">
-        <div
-            class="bg-gray-100 p-12 rounded-3xl shadow-2xl border-l-8 border-orange-600"
-        >
-            <h2 class="text-5xl font-extrabold text-orange-600 tracking-tight">
-                Un engagement pour l’environnement
-            </h2>
-            <p class="mt-6 text-xl text-gray-700 leading-relaxed">
-                La préservation de notre planète est au cœur du festival. À
-                travers nos films et activités, nous souhaitons sensibiliser les
-                plus jeunes aux enjeux environnementaux et montrer que le sport
-                et le cinéma peuvent être des vecteurs de changement.
-            </p>
-        </div>
-    </section>
-
-    <section class="text-center py-20">
-        <h2 class="text-4xl font-extrabold text-orange-600">
-            Prêts à vivre une expérience inoubliable ?
+            UN FESTIVAL QUI VOUS RESSEMBLE
         </h2>
-        <p class="mt-4 text-xl text-gray-700">
-            Découvrez dès maintenant le programme du festival.
+        <p class="text-xl text-gray-800 leading-relaxed max-w-4xl">
+            Créé en 2024, <span class="text-orange-600 font-bold"
+                >"Ça va Trail’er"</span
+            > a pour vocation de rassembler les familles passionnées de <strong
+                >randonnée et de sport</strong
+            > dans un cadre convivial et inspirant. À travers la projection de nombreux
+            <strong>courts-métrages</strong>, nous vous invitons à explorer des
+            histoires captivantes en lien avec <span
+                class="text-orange-600 font-bold">l'écologie et l'aventure</span
+            >.
         </p>
-        <a
-            href="/programme"
-            class="mt-8 inline-block bg-orange-600 text-white text-2xl font-bold py-4 px-12 rounded-full shadow-lg transition-transform hover:scale-110 hover:bg-orange-700"
+
+        <p class="text-xl text-gray-800 leading-relaxed max-w-4xl">
+            Nous croyons que le <strong>cinéma et le sport</strong> sont des vecteurs
+            d’émotion et de sensibilisation. Notre festival met donc un point d'honneur
+            à promouvoir la préservation de notre environnement, afin de préparer
+            <span class="text-orange-600 font-bold"
+                >les générations futures</span
+            > aux défis climatiques qui nous concernent tous.
+        </p>
+
+        <div class="mt-8">
+            <a
+                href="/programme"
+                class="inline-block bg-orange-600 text-white text-2xl font-bold py-4 px-12 rounded-full shadow-lg transition transform hover:scale-110 hover:bg-orange-700 border-2 border-white"
+            >
+                DÉCOUVRIR LE PROGRAMME
+            </a>
+        </div>
+    </section>
+
+    <section class="bg-orange-50 py-24">
+        <div class="max-w-6xl mx-auto px-8 text-center space-y-12">
+            <h2
+                class="text-5xl font-extrabold text-orange-600 tracking-tight drop-shadow-md"
+            >
+                NOTRE ENGAGEMENT POUR L'ÉCOLOGIE
+            </h2>
+            <p class="text-xl text-gray-800 leading-relaxed max-w-4xl mx-auto">
+                Nous sommes convaincus que chaque action compte ! Notre festival
+                adopte une démarche <strong>éco-responsable</strong> en favorisant
+                l'utilisation de matériaux durables, la réduction des déchets et
+                une sensibilisation active auprès de notre public.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-lg">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-orange-600 font-extrabold text-2xl">
+                        ♻️ Zéro plastique
+                    </h3>
+                    <p class="mt-4 text-gray-700">
+                        Nous utilisons uniquement des contenants recyclables et
+                        compostables.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-orange-600 font-extrabold text-2xl">
+                        🌿 Partenaires locaux
+                    </h3>
+                    <p class="mt-4 text-gray-700">
+                        Nos produits alimentaires et boissons proviennent de
+                        circuits courts et durables.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-orange-600 font-extrabold text-2xl">
+                        🚶‍♂️ Accès doux
+                    </h3>
+                    <p class="mt-4 text-gray-700">
+                        Nous encourageons le covoiturage, le vélo et les
+                        transports en commun.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 flex flex-col items-center space-y-10">
+        <h2
+            class="text-5xl font-extrabold text-orange-600 tracking-tight drop-shadow-md"
         >
-            Voir le programme
-        </a>
+            REJOIGNEZ-NOUS !
+        </h2>
+        <p class="text-xl text-gray-800 leading-relaxed max-w-4xl text-center">
+            Venez vivre une expérience unique mêlant sport, cinéma et engagement
+            écologique. Que vous soyez spectateur, sportif ou simple curieux,
+            notre festival vous attend avec impatience !
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-6">
+            <a
+                href="/inscription"
+                class="bg-orange-600 text-center text-white text-2xl font-bold py-4 px-12 rounded-full shadow-lg transition transform hover:scale-110 hover:bg-orange-700 border-2 border-white"
+            >
+                S'INSCRIRE
+            </a>
+            <a
+                href="/contact"
+                class="text-orange-600 border-2 border-orange-400 text-2xl font-bold py-4 px-12 rounded-full shadow-lg transition transform hover:bg-orange-100"
+            >
+                NOUS CONTACTER
+            </a>
+        </div>
     </section>
 </Base>
