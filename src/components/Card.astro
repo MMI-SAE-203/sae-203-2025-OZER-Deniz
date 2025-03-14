@@ -1,6 +1,6 @@
 ---
 const { titre, diffusion, affiche, ba, collectionId, recordId } = Astro.props;
-const baseUrl = "http://127.0.0.1:8090";
+const baseUrl = "https://sae203.deniz-ozer.fr";
 const afficheUrl = `${baseUrl}/api/files/${collectionId}/${recordId}/${affiche}`;
 console.log("Affiche URL:", afficheUrl);
 ---

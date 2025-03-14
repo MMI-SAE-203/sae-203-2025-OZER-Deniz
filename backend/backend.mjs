@@ -56,10 +56,6 @@ export async function allParticipantsSorted() {
     });
 }
 
-export async function oneFilm(id) {
-    return await pb.collection('Film').getOne(id);
-}
-
 export async function oneActivity(id) {
     return await pb.collection('Activite').getOne(id);
 }
