@@ -1,11 +1,21 @@
 ---
 import Base from "../../layouts/Layout.astro";
-import { oneInvite } from "../../../backend/backend.mjs";
+import {
+    oneInvite,
+    allFilms,
+    allActivities,
+} from "../../../backend/backend.mjs";
 
 const { id } = Astro.params;
 const invite = await oneInvite(id);
 const baseUrl = "http://127.0.0.1:8090"; // Remplacez par l'URL de votre instance PocketBase
 const photoUrl = `${baseUrl}/api/files/Invite/${id}/${invite.photo_invite}`;
+const films = await allFilms();
+const activities = await allActivities();
+const relatedFilms = films.filter((film) => film.relation_film === id);
+const relatedActivities = activities.filter(
+    (activity) => activity.relation_activite === id,
+);
 ---
 
 <Base titre={`${invite.prenom_invite} ${invite.nom_invite}`}>
@@ -61,17 +71,59 @@ const photoUrl = `${baseUrl}/api/files/Invite/${id}/${invite.photo_invite}`;
                         <strong>Rôle :</strong>
                         {invite.role_invite}
                     </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <strong>Biographie :</strong>
+                        {invite.biographie_invite}
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Biographie de l'invité -->
-        <section class="max-w-6xl mx-auto my-12 px-6 text-left">
-            <h2 class="text-4xl font-bold text-orange-600 mb-4">Biographie</h2>
-            <p class="text-lg text-gray-700 mb-8">
-                {invite.biographie_invite}
-            </p>
-        </section>
+        <!-- Films liés -->
+        {
+            relatedFilms.length > 0 && (
+                <section class="max-w-6xl mx-auto my-12 px-6 text-left">
+                    <h2 class="text-4xl font-bold text-orange-600 mb-4">
+                        Films liés
+                    </h2>
+                    <ul class="list-disc list-inside text-lg text-gray-700">
+                        {relatedFilms.map((film) => (
+                            <li>
+                                <a
+                                    href={`/film/${film.id}`}
+                                    class="text-orange-500 hover:underline"
+                                >
+                                    {film.titre_film}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            )
+        }
+
+        <!-- Activités liées -->
+        {
+            relatedActivities.length > 0 && (
+                <section class="max-w-6xl mx-auto my-12 px-6 text-left">
+                    <h2 class="text-4xl font-bold text-orange-600 mb-4">
+                        Activités liées
+                    </h2>
+                    <ul class="list-disc list-inside text-lg text-gray-700">
+                        {relatedActivities.map((activity) => (
+                            <li>
+                                <a
+                                    href={`/activite/${activity.id}`}
+                                    class="text-orange-500 hover:underline"
+                                >
+                                    {activity.titre_activite}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            )
+        }
 
         <!-- Bouton de retour -->
         <section class="max-w-6xl mx-auto my-12 px-6 text-center">

@@ -68,6 +68,15 @@ const afficheUrl = `${baseUrl}/api/files/Film/${id}/${film.affiche_film}`;
                         <strong>Genre :</strong>
                         {film.genre_film}
                     </p>
+                    <p class="text-lg text-gray-700 mb-4">
+                        <strong>Bande-annonce :</strong>
+                        <a
+                            href={film.bande_annonce_film}
+                            target="_blank"
+                            class="text-orange-500 hover:underline"
+                            >Voir la bande-annonce</a
+                        >
+                    </p>
                 </div>
             </div>
         </section>

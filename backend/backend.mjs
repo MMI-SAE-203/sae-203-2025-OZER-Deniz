@@ -10,7 +10,7 @@ export async function allFilms() {
 
 export async function oneFilm(id) {
     return await pb.collection('Film').getOne(id, {
-        fields: 'titre_film,duree_film,langue_film,production_film,annee_de_sortie_film,genre_film,affiche_film,bande_annonce_film'
+        fields: 'titre_film,duree_film,langue_film,production_film,annee_de_sortie_film,genre_film,affiche_film,bande_annonce_film,relation_film'
     });
 }
 
@@ -22,7 +22,7 @@ export async function allActivities() {
 
 export async function oneActivity(id) {
     return await pb.collection('Activite').getOne(id, {
-        fields: 'titre_activite,type_activite,image_activite,date_activite,lieu_activite,description_activite'
+        fields: 'titre_activite,type_activite,image_activite,date_activite,lieu_activite,description_activite,relation_activite'
     });
 }
 
@@ -34,7 +34,7 @@ export async function allInvites() {
 
 export async function oneInvite(id) {
     return await pb.collection('Invite').getOne(id, {
-        fields: 'nom_invite,prenom_invite,role_invite,biographie_invite,photo_invite'
+        fields: 'nom_invite,prenom_invite,role_invite,biographie_invite,photo_invite,relation_invite'
     });
 }
 
