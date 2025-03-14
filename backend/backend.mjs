@@ -56,10 +56,6 @@ export async function allParticipantsSorted() {
     });
 }
 
-export async function oneActivity(id) {
-    return await pb.collection('Activite').getOne(id);
-}
-
 export async function oneParticipant(id) {
     return await pb.collection('Invite').getOne(id);
 }
